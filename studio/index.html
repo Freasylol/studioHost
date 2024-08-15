@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дикторы</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <nav class="nav">
+                <div class="container">
+                    <nav class="nav-inner">
+                        <div class="nav-link-block">
+                            <a class="nav-link"href="">О студии</a>
+                            <a class="nav-link" href="">FAQ</a>
+                            <a class="nav-link" href="">Оплата</a>
+                            <a class="nav-link" href="">Блог</a>
+                            <a class="nav-link" href="">Контакты</a>
+                        </div>
+                        <a href="../workcalc/index.html" class="nav-link-block-variant">
+                            <img class="nav-link-img" src="./images/time-left.png" alt="" width="20" height="20">
+                            <div class="nav-link">Хронометр</div>
+                        </a>
+                    </nav>
+                </div>
+            </nav>
+            <nav class="nav-services">
+                <div class="container">
+                    <div class="nav-services-inner">
+                        <div class="nav-services-block">
+                            <div class="nav-services-logo">
+                                <!-- <img src="./images/logo.png" alt="logo" width="50px"> -->
+                                <p class="nav-services-logo-text">Logo</p>
+                            </div>
+                            <a class="nav-services-link"href="">Аудио</a>
+                            <a class="nav-services-link" href="">Видео</a>
+                            <a class="nav-services-link" href="">Дикторы</a>
+                            <a class="nav-services-link" href="">Разработка</a>
+                            <a class="nav-services-link" href="">Другие услуги</a>
+                        </div>
+                        <div class="nav-services-call">
+                            <div class="nav-services-number">
+                                +1 (012) 234-56-78
+                            </div>
+                            <button class="light-btn">ONLINE-заказ</button>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="intro">
+        <div class="container">
+            <div class="intro-inner">
+                <h1 class="intro-inner-header">Дикторы</h1>
+            </div>
+        </div>
+    </div>
+    <div class="intro-text">
+        <div class="container">
+            <div class="intro-text-inner">
+                <p class="intro-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est excepturi dignissimos voluptatibus quam atque incidunt minus distinctio impedit aspernatur eaque fuga, deserunt ullam eius, voluptas expedita laboriosam quod, aliquid natus!
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card-block">
+        <div class="container">
+            <div class="card-block-menu">
+                <div class="filter">
+                    <div class="filter-btn">
+                        <button class="dark-btn">
+                            Фильтр
+                        </button>
+                    </div>
+                    <aside class="filter-aside">
+                        <button class="filter-aside-close-btn">&times;</button>
+                        <h2 class="aside-header">Фильтр</h2>
+                        <p>Воспользуйтесь фильтром для поиска дикторов по заданным параметрам</p>
+                        <input class="aside-input" type="text" placeholder="Введите имя диктора">
+                        <button class="aside-find-btn">Найти</button>
+                        <form class="checkbox-form">
+                            <h2 class="checkbox-form-header">Пол:</h2>
+                            <label class="checkbox-container voice-type">
+                                Мужские голоса
+                                <input type="checkbox" name="voice-type" value="man">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container voice-type">
+                                Женские голоса
+                                <input type="checkbox" name="voice-type" value="woman">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container voice-type">
+                                Детские голоса
+                                <input type="checkbox" name="voice-type" value="child">
+                                <span class="checkmark"></span>
+                            </label>
+                        </form>
+                        <div class="slider-container">
+                            <div class="slider-line">
+                              <span id="slider-1" class="slider-thumb"></span>
+                              <span id="slider-2" class="slider-thumb"></span>
+                            </div>
+                            <input type="text" id="input-1">
+                            <input type="text" id="input-2">
+                        </div>
+                        <form class="checkbox-form">
+                            <h2 class="checkbox-form-header">Тембр:</h2>
+                            <label class="checkbox-container">
+                                Высокий
+                                <input type="checkbox" name="timbre" value="high">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Средний
+                                <input type="checkbox" name="timbre" value="medium">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Низкий
+                                <input type="checkbox" name="timbre" value="low">
+                                <span class="checkmark"></span>
+                            </label>
+                        </form>
+                        <form class="checkbox-form">
+                            <h2 class="checkbox-form-header">Особенности:</h2>
+                            <label class="checkbox-container">
+                                Быстрый
+                                <input type="checkbox" name="peculiarity" value="fast">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Популярный
+                                <input type="checkbox" name="peculiarity" value="popular">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Известный
+                                <input type="checkbox" name="peculiarity" value="famous">
+                                <span class="checkmark"></span>
+                            </label>
+                        </form>
+                        <form class="checkbox-form">
+                            <h2 class="checkbox-form-header">Возраст:</h2>
+                            <label class="checkbox-container">
+                                Молодой
+                                <input type="checkbox" name="age" value="young">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Средний
+                                <input type="checkbox" name="age" value="middleAge">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Пожилой
+                                <input type="checkbox" name="age" value="old">
+                                <span class="checkmark"></span>
+                            </label>
+                        </form>
+                        <form class="checkbox-form">
+                            <h2 class="checkbox-form-header">Специализация:</h2>
+                            <label class="checkbox-container">
+                                Реклама
+                                <input type="checkbox" name="specialization" value="ad">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Закадр/дубляж
+                                <input type="checkbox" name="specialization" value="offScreen">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="checkbox-container">
+                                Игровые
+                                <input type="checkbox" name="specialization" value="gaming">
+                                <span class="checkmark"></span>
+                            </label>
+                        </form>
+
+                    </aside>
+                    <a class="filter-link" href="#">Российские</a>
+                    <a class="filter-link" href="#">Иностранные</a>
+                    <a class="filter-link" href="#">Вокалисты</a>
+                    <a class="filter-link" href="#">Пародисты</a>
+                    <a class="filter-link" href="#">Чтецы аудиокниг</a>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">По алфавиту (А-Я)</button>
+                    <div class="dropdown-content">
+                        <a class="dropdown-link sort-ascname" href="#">По алфавиту (А-Я)</a>
+                        <a class="dropdown-link sort-descname" href="#">По алфавиту(Я-А)</a>
+                        <a class="dropdown-link sort-ascprice" href="#">Цена (возрастание)</a>
+                        <a class="dropdown-link sort-descprice" href="#">Цена (убывание)</a>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="card-block-inner">
+            </div>
+            <div class="show-more">
+                <button class="show-more-btn dark-btn">
+                    Показать еще
+                </button>
+            </div>
+            
+            <div class="pagination">
+               
+                <button class="arrow-btn prev-btn disabled">
+                    <img src="./images/left-arrow.png" alt="">
+                </button>
+                <button class="pagination-btn selected">
+                    1
+                </button>
+                <button class="pagination-btn">
+                    2
+                </button>
+                <button class="pagination-btn">
+                    3
+                </button>
+                <button class="pagination-btn">
+                    4
+                </button>
+                <button class="arrow-btn next-btn">
+                    <img src="./images//right-arrow.png" alt="">
+                </button> 
+            </div> 
+        </div>             
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-inner-item">
+                    <div class="footer-inner-item-header">
+                        Дикторы
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Российские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Иностранные
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Вокалисты
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Пародисты
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Китайские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Американские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Немецкие
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Французские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Арабские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Иврит
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Испанские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Американские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Немецкие
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Французские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Арабские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Иврит
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Испанские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Итальянские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Японские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Болгарские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Азербайджанские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Армянские
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Чтецы аудиокниг
+                    </div>
+                </div>
+                <div class="footer-inner-item">
+                    <div class="footer-inner-item-header">
+                        Локализация
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Перевод и локализация
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Локализация игр
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Локализация игр на английский
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Перевод видео на английский
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Перевод видео с английского на русский
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Перевод фильмов и сериалов
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Перевод видео на ютубе
+                    </div>
+                </div>
+                <div class="footer-inner-item">
+                    <div class="footer-inner-item-header">
+                        Услуги и сервисы
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Аудио
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Видео
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Закадр и дубляж
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Разработка
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Сценарии
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Хронометр
+                    </div>
+                </div>
+                <div class="footer-inner-item">
+                    <div class="footer-inner-item-header">
+                        Информация
+                    </div>
+                    <div class="footer-inner-item-text">
+                        О студии
+                    </div>
+                    <div class="footer-inner-item-text">
+                        FAQ
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Оплата
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Блог
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Контакты
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Правила сайта
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Карта сайта
+                    </div>
+                </div>
+                <div class="footer-inner-item">
+                    <div class="footer-inner-item-header">
+                        Контакты
+                    </div>
+                    <div class="footer-inner-item-text">
+                        Адрес
+                    </div>
+                    <div class="footer-inner-item-phone">
+                        +1 (012) 234-56-78
+                    </div>
+                    <div class="footer-inner-item-social">
+                        <a href="https://vk.com/" class="footer-inner-item-social-link" target="_blank">
+                            <img class="footer-inner-item-social-img" src="./images/vk-icon.png" alt="">
+                        </a>
+                        <a href="https://youtube.com/" class="footer-inner-item-social-link" target="_blank">
+                            <img class="footer-inner-item-social-img" src="./images/youtube-icon.png" alt="">
+                        </a>
+                    </div>
+                    <div class="footer-inner-item-payment">
+                        <a href="https://www.mastercard.by/ru-by.html" class="footer-inner-item-payment-link">
+                            <img class="footer-inner-item-payment-img" src="./images/mastercard-icon.png" alt="">
+                        </a>
+                        <a href="https://by.visa.com/" class="footer-inner-item-payment-link">
+                            <img class="footer-inner-item-payment-img" src="./images/visa-icon.png" alt="">
+                        </a>
+                        <!-- <a href="https://by.visa.com/" class="footer-inner-item-payment-link">
+                            <img class="footer-inner-item-payment-img" src="./images/mir-icon.png" alt="">
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="./index.js"></script>
+</body>
+
+</html>
