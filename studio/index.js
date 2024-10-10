@@ -61,29 +61,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function sortByRangePrice(min, max, arr) {
         const filteredArr = arr.filter(num => num.price >= min && num.price <= max);
-        // Сортируем отфильтрованный массив
-        // filteredArr.sort((a, b) => a.price - b.);
         return filteredArr;
     }
-  
-    // createCards(data);
 
     function createCards(dataArr) {
-        // console.log(dataArr)
         dataArr.forEach((card) => {
             createCard(card.name, card.specialization, card.photoSrc, card.audioSrc, card.price, card.description);
         })
-        // let cardArr = document.querySelectorAll('.card'); 
     }
 
-    let dataCopy = data;
+    let dataCopy = [...data];
 
     const itemsPerPage = 10;
     let currentPage = 1;
 
     let chunkedArr = chunkArray(data, itemsPerPage);
-
-    // let filterArr = [];
 
     console.log(chunkedArr);
     
@@ -128,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let prices = data.map(object => object.price);
     let maxPrice = Math.max(...prices);
-    // let minPrice = Math.min(...prices);
     let minPrice = 0;
 
     let categoryName = 'default';
@@ -145,11 +136,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function searchFunc() {
-        // let filterArr = data;    
+  
         if (categoryName !== 'default') {
             deleteCards();
-            // categoryName = e.target.textContent;
-            // searchFunc();
             dataCopy = filterByType(categoryName);
             chunkedArr = chunkArray(dataCopy, itemsPerPage);
             currentPage = 1;
@@ -164,13 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
             currentPage = 1;
             setPage(currentPage);
             createCards(chunkedArr[currentPage - 1]);
-            // alert('searchText');
         }
 
         if (min !== minPrice || max === maxPrice) {
             console.log(min);
             console.log(max);
-            // const prices = dataCopy.map(speaker => speaker.dataCopy); 
             deleteCards();   
             dataCopy = sortByRangePrice(min, max, dataCopy);
             console.log(dataCopy);
@@ -210,17 +197,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 setPage(currentPage);
                 createCards(chunkedArr[currentPage - 1]);
             }
-            // alert('sortType');
         }
-
-       
     }
 
     console.log(minPrice);
     console.log(maxPrice);
-
-    // let min = 0;
-    // let max = maxPrice;
     
     let slider1Pos = min;
     let slider2Pos = max;
@@ -254,8 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
         slider1.style.left = (min / max) * rect.width + 'px';
 
         searchFunc();
-
-        // slider2.style.left = 1 * rect.width + 'px';
     })
 
     function initSlider() {
@@ -367,7 +346,6 @@ slider2.addEventListener('mousedown', (e) => {
         currentPage = 1;
         setPage(currentPage);
         createCards(chunkedArr[currentPage - 1]);
-        // console.log(resultArr);
         return resultArr;
     }
 
@@ -405,15 +383,11 @@ slider2.addEventListener('mousedown', (e) => {
         return Array.from(document.querySelectorAll(`input[name="${groupName}"]:checked`))
                     .map(checkbox => checkbox.value);
     }
-
-    // function findCommonElements(array1, array2) {
-    //     return array1.filter(element => array2.includes(element));
-    // }    
+  
     function findCommonElements(...arrays) {
         const nonEmptyArrays = arrays.filter(array => array.length > 0);
     
         if (nonEmptyArrays.length === 0) return [];
-        // if (arrays.length === 0) return [];
         
         return nonEmptyArrays.reduce((commonElements, currentArray) => {
             return commonElements.filter(element => currentArray.includes(element));
@@ -438,26 +412,6 @@ slider2.addEventListener('mousedown', (e) => {
             console.log(e.target.value);
             console.log(e.target.checked);
             let isChecked = e.target.checked;
-            // const filterObjectArr = [
-            //     {
-            //         'man': 'Мужской',
-            //         'woman': 'Женский',
-            //         'child': 'Детский',
-            //         'high': 'Высокий',
-            //         'medium': 'Средний',
-            //         'low': 'Низкий',
-            //         'fast': 'Быстрый',
-            //         'popular': 'Популярный',
-            //         'famous': 'Известный',
-            //         'young': 'Молодой',
-            //         'middleAge': 'Средний',
-            //         'old': 'Пожилой',
-            //         'ad': 'Реклама',
-            //         'offScreen': 'Закадр/дубляж',
-            //         'gaming': 'Игровые' 
-            //     }
-            // ];
-            // const voiceType = ["Мужской", "Женский", "Детский"];
             let checkBoxValue = e.target.value;
             let arr = [];
             let voiceArr = [];
@@ -486,15 +440,6 @@ slider2.addEventListener('mousedown', (e) => {
                     timbreArr = [...new Set([...timbreArr, ...generateTimbre('Низкий', dataCopy)])];
                 }
             })
-            // selectedAge.forEach((ageType) => {
-            //     if (ageType === 'high') {
-            //         ageTypeArr = [...new Set([...ageTypeArr, ...generateAge('Высокий', dataCopy)])];
-            //     } else if (ageType === 'medium') {
-            //         ageTypeArr = [...new Set([...ageTypeArr, ...generateTimbre('Средний', dataCopy)])];
-            //     } else if (ageType === 'low') {
-            //         ageTypeArr = [...new Set([...ageTypeArr, ...generateTimbre('Низкий', dataCopy)])];
-            //     }
-            // })
 
             selectedPeculiarity.forEach((peculiarity) => {
                 if (peculiarity === 'fast') {
@@ -517,14 +462,6 @@ slider2.addEventListener('mousedown', (e) => {
             })
 
             arr = findCommonElements(voiceArr, timbreArr, peculiarityArr, specializationArr);
-
-            // if (searchTerm !== '' && arr.length === 0) {
-            //     arr = searchByName(searchTerm);
-            // } else if (searchTerm !== '') {
-            //     arr = searchByNameArr(searchTerm, arr);
-            // } else if (arr.length === 0) {
-            //     arr = dataCopy;
-            // }    
             
             console.log('Arr');
             console.log(arr);
@@ -537,13 +474,6 @@ slider2.addEventListener('mousedown', (e) => {
     }) 
 
     asideBtn.addEventListener('click', function() {
-        // deleteCards();
-        // searchTerm = asideInput.value.trim().toLowerCase();
-        // const resultArr = searchByName(searchTerm);        
-        // chunkedArr = chunkArray(resultArr, itemsPerPage);
-        // currentPage = 1;
-        // setPage(currentPage);
-        // createCards(chunkedArr[currentPage - 1]);
         searchText = asideInput.value.trim().toLowerCase();
         searchFunc();
     });
@@ -590,16 +520,8 @@ slider2.addEventListener('mousedown', (e) => {
 
     filterLinkArr.forEach((link) => {
         link.addEventListener('click', function(e) {
-            // deleteCards();
             categoryName = e.target.textContent;
             searchFunc();
-            // let filterArr = filterByType(e.target.textContent);
-            // dataCopy = filterArr;
-            // console.log(filterArr);
-            // chunkedArr = chunkArray(filterArr, itemsPerPage);
-            // currentPage = 1;
-            // setPage(currentPage);
-            // createCards(chunkedArr[currentPage - 1]);
         })
     })
 
@@ -621,45 +543,21 @@ slider2.addEventListener('mousedown', (e) => {
     }
 
     sortAscName.addEventListener('click', function(e) {
-        // deleteCards();
-        // sortByName(true);
-        // chunkedArr = chunkArray(dataCopy, itemsPerPage);
-        // currentPage = 1;
-        // setPage(currentPage);
-        // createCards(chunkedArr[currentPage - 1]);
         sortType = 'sortAscName';
         searchFunc();
     })
 
     sortDescName.addEventListener('click', function(e) {
-        // deleteCards();
-        // sortByName(false);
-        // chunkedArr = chunkArray(dataCopy, itemsPerPage);
-        // currentPage = 1;
-        // setPage(currentPage);
-        // createCards(chunkedArr[currentPage - 1]);
         sortType = 'sortDescName';
         searchFunc();
     })
 
     sortAscPrice.addEventListener('click', function(e) {
-        // deleteCards();
-        // sortByPrice(true);
-        // chunkedArr = chunkArray(dataCopy, itemsPerPage);
-        // currentPage = 1;
-        // setPage(currentPage);
-        // createCards(chunkedArr[currentPage - 1]);
         sortType = 'sortAscPrice';
         searchFunc();
     })
 
     sortDescPrice.addEventListener('click', function(e) {
-        // deleteCards();
-        // sortByPrice(false);
-        // chunkedArr = chunkArray(dataCopy, itemsPerPage);
-        // currentPage = 1;
-        // setPage(currentPage);
-        // createCards(chunkedArr[currentPage - 1]);
         sortType = 'sortDescPrice';
         searchFunc();
     })
@@ -706,8 +604,6 @@ slider2.addEventListener('mousedown', (e) => {
                 buttonStart.textContent = currentPage - (i + 1);
                 paginationContainer.insertBefore(buttonStart, paginationBtn);
             } else {
-                console.log('bebra');
-
             }
         }
 
@@ -728,7 +624,6 @@ slider2.addEventListener('mousedown', (e) => {
         let paginationBtnArr = document.querySelectorAll('.pagination-btn');
         paginationBtnArr.forEach((btn) => {
         btn.addEventListener('click', function(e) {
-            // deleteCards();
             deleteCards();
             currentPage = Number(e.target.textContent);
             console.log(currentPage);
@@ -916,10 +811,6 @@ slider2.addEventListener('mousedown', (e) => {
 
 
         audioPlayer.addEventListener('timeupdate', () => {
-            // if (!isDragging) {
-            //     const progressPercent = (audio.currentTime / audio.duration) * 100;
-            //     progress.style.width = `${progressPercent}%`;
-            // }
             const progressPercent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
             progress.style.width = `${progressPercent}%`;
             timerCurrent.textContent = formatTime(audioPlayer.currentTime);
@@ -977,11 +868,6 @@ slider2.addEventListener('mousedown', (e) => {
         expandedCardBtn.className = 'expanded-btn';
         expandedCardBtn.textContent = 'Заказать';
 
-        // expandedCardBtn.addEventListener('click', function(event) {
-        //     event.stopPropagation(); 
-        //     alert('Button clicked');
-        // });
-
         const expandedCardSpec = document.createElement('p');
         expandedCardSpec.className = 'expanded-card-spec';
         expandedCardSpec.textContent = description;
@@ -1029,56 +915,4 @@ slider2.addEventListener('mousedown', (e) => {
         
         return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
     }
-
-    // audioArr.forEach((audio, index) => {
-    //     audio.addEventListener('timeupdate', () => {
-    //         // if (!isDragging) {
-    //         //     const progressPercent = (audio.currentTime / audio.duration) * 100;
-    //         //     progress.style.width = `${progressPercent}%`;
-    //         // }
-    //         const progressPercent = (audio.currentTime / audio.duration) * 100;
-    //         progressArr[index].style.width = `${progressPercent}%`;
-    //         currentTimerArr[index].textContent = formatTime(audio.currentTime);
-    //         timerLengthArr[index].textContent = formatTime(audio.duration);
-    //     });
-    // })
-    
-
-    // progressContainerArr.forEach((progressCont, index) => {
-    //     progressCont.addEventListener('mousedown', (e) => {
-    //         const width = progressCont.clientWidth;
-    //         const clickX = e.offsetX;
-    //         const duration = audioArr[index].duration;
-    //         audioArr[index].currentTime = (clickX / width) * duration;
-    //     });
-    // })
-
-    // let popupTimeout;
-    // progressContainerArr.forEach((progressCont, index) => {
-    //     progressCont.addEventListener('mousemove', (e) => {
-    //         clearTimeout(popupTimeout);
-    //         const width = progressCont.clientWidth;
-    //         const offsetX = e.offsetX;
-    //         const duration = audioArr[index].duration;
-    //         const time = (offsetX / width) * duration;
-    //         const minutes = Math.floor(time / 60);
-    //         const seconds = Math.floor(time % 60);
-    
-    //         timePopupArr[index].textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    //         timePopupArr[index].style.left = `${offsetX}px`;
-    //         timePopupArr[index].style.display = 'block';
-    
-    //         popupTimeout = setTimeout(() => {
-    //             timePopupArr[index].style.display = 'none';
-    //         }, 1000);
-    //     });
-    // })
-
-    // progressContainerArr.forEach((progressCont, index) => {
-    //     progressCont.addEventListener('mouseleave', () => {
-    //         timePopupArr[index].style.display = 'none';
-    //     }); 
-    // })
-
-    // console.log('Loaded')
 });
